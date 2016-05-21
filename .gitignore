@@ -1,0 +1,40 @@
+# === Vim ===
+# swap:
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# Session:
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files:
+tags
+
+# === Sublime ===
+*.sublime-project
+*.sublime-workspace
+
+# ===Python===
+# Byte-compiled / optimized / DLL files:
+*.egg-info
+*.pot
+*.py[co]
+__pycache__
+
+# Django:
+*.log
+local_settings.py
+
+# virtualenv:
+env3/
+
+# SQLite3 database files:
+*.db
+*.sqlite3
+*.sqlite
+
+# Logs:
+*.log
+
+# Environment variables
+*.env
