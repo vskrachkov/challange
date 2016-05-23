@@ -10,7 +10,7 @@ class Group(models.Model):
         verbose_name_plural = u'Группы'
 
     def __str__(self):
-        return u'Группа <{0}>'.format(self.name)
+        return u'Группа {0}'.format(self.name)
 
     @property
     def starosta_list(self):
@@ -54,10 +54,10 @@ class Student(models.Model):
 
     def __str__(self):
         if not self.starosta:
-            return u'Студент <{0}, {1}>'.format(
+            return u'Студент: {0}, {1}'.format(
                 self.full_name, self.group.name)
         else:
-            return u'Студент <{0}, {1}, Староста группы>'.format(
+            return u'Студент: {0}, {1}, Староста группы'.format(
                 self.full_name, self.group.name)
 
     def clean(self):
