@@ -124,6 +124,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# For Bootstrap 3, change error alert to 'danger'
+from django.contrib import messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+}
+
 # Django Debug Toolbar
 if DEBUG:
     INSTALLED_APPS += (
