@@ -1,5 +1,6 @@
 from django.conf.urls import url
 
+
 from students.views import GroupListView, GroupDetailView, GroupUpdateView, \
     GroupCreateView, GroupDeleteView, StudentCreateView, StudentDeleteView, \
     StudentUpdateView
@@ -24,5 +25,6 @@ urlpatterns = [
         StudentDeleteView.as_view(success_url='/groups'), name='student_delete'),
     url(r'^student/(?P<pk>[0-9]+)/update',
         StudentUpdateView.as_view(success_url='/groups'), name='student_update'),
+    
 
 ]

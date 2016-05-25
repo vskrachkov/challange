@@ -1,5 +1,8 @@
-<form action="" method="post">
-{% csrf_token %}
-{{ form }}
-<input type="submit" value="Save" />
-</form>
+{% extends "students/base.html" %}
+{% block content %}
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Save" />
+    </form> 
+{% endblock content %}

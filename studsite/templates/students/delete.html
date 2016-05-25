@@ -1,4 +1,7 @@
-<form action="" method="post">{% csrf_token %}
-    <p>Вы действительно хотите удалить "{{ object }}"?</p>
-    <input type="submit" value="Confirm" />
-</form>
+{% extends "students/base.html" %}
+{% block content %}
+    <form action="" method="post">{% csrf_token %}
+        <p>Вы действительно хотите удалить "{{ object }}"?</p>
+        <input type="submit" value="Confirm" />
+    </form>   
+{% endblock content %}

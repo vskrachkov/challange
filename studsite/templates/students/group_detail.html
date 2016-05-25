@@ -1,13 +1,14 @@
-<h2>{{ title }}</h2> 
-<a href="{% url 'group_delete' pk=group.pk %}">delete group</a> | 
-<a href="{% url 'groups' %}">group list</a>
-{% for st in group.student_set.all %}
-    <p>
-        {{ st.full_name }} |
-        <a href="{% url 'student_delete' pk=st.pk %}">delete</a> | 
-        <a href="{% url 'student_update' pk=st.pk %}">update</a>
-    </p>
-{% empty %}
-    <p>No any students in this group</p>
-{% endfor %}
-<a href="{% url 'student_create' %}">add student</a>
+{% extends "students/base.html" %}
+{% block content %}
+    <a href="{% url 'group_delete' pk=group.pk %}">delete group</a>
+    {% for st in group.student_set.all %}
+        <p>
+            {{ st.full_name }} |
+            <a href="{% url 'student_delete' pk=st.pk %}">delete</a> | 
+            <a href="{% url 'student_update' pk=st.pk %}">update</a>
+        </p>
+    {% empty %}
+        <p>No any students in this group</p>
+    {% endfor %}
+    <a href="{% url 'student_create' %}">add student</a>   
+{% endblock content %}
