@@ -40,7 +40,7 @@ test task for django junior
   ./manage.py migrate 
   ```
   
-#### Create superuser befor start server
+#### Create superuser for using admin.
   Execute following command:
   ```
   ./manage.py createsuperuser
