@@ -9,7 +9,9 @@
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
-{{ form }}
+
+<p>Имя пользователя или email{{ form.username }}</p>
+<p>Пароль{{ form.password }}</p>
 
 <input type="submit" value="login" />
 <input type="hidden" name="next" value="{% url 'groups' %}" />

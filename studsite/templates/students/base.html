@@ -8,9 +8,12 @@
     {% endblock registration %}
     
 {% else %}
-    <a href="{% url 'password_change' %}">password change</a> |
+<div>
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
     <a href="{% url 'groups' %}">group list</a> |
+    <a href="{% url 'password_change' %}">password change</a> |
     <a href="{% url 'logout' %}">logout</a> |
+</div>
     <hr>
     <h2>{{ title }}</h2> 
 
