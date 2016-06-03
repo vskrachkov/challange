@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(
-        r'/login',
+        r'login',
         auth_views.login,
         {
             'template_name': 'users/login.html',

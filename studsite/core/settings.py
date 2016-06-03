@@ -49,6 +49,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 MIDDLEWARE_CLASSES = [
+    'students.middleware.StudentsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
