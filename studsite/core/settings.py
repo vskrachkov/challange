@@ -142,14 +142,6 @@ MESSAGE_TAGS = {
     messages.WARNING: 'warning',
 }
 
-# Django Debug Toolbar
-if DEBUG:
-    INSTALLED_APPS += (
-        'debug_toolbar', )
-
-    MIDDLEWARE_CLASSES += (
-        'debug_toolbar.middleware.DebugToolbarMiddleware', )
-
 try:
     from .local_settings import *
     print('"local_settings.py" is included')

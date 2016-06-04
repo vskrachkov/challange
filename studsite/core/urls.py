@@ -21,14 +21,6 @@ from core import settings
 
 urlpatterns = [
     url(r'^', include('students.urls')),
-
     url(r'^admin/', admin.site.urls),
-
     url(r'^', include('users.urls')),
-
-    
 ]
-
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns += [url(r'^__debug__/', include(debug_toolbar.urls)), ]
