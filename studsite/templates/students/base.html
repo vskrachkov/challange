@@ -2,6 +2,8 @@
 <meta content="text/html"> 
 <h1 style="color:green;">Students challange</h1>
 
+{% load student_extras %}
+
 {% if not user.is_authenticated %}
     <p>You are not authenticated yet.</p>
     Please, <a href="{% url 'login' %}">login</a>.
@@ -22,7 +24,14 @@
     {% block content %}
     
     {% endblock content %}
-<p>request time: {{ dd }}|</p>
-<p>sql queries count: {{ sql_count }}</p>
+<hr>
+<p>
+    request time: {{ dd }}|
+    sql queries count: {{ sql_count }}|
+    settings: {{ settings }}|
+</p>
+<p>
+    go to admin for current user: <a href="{{ user|admin_url }}">user</a>
+</p>
 {% endif %}
 </html>

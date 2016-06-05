@@ -1,5 +1,6 @@
 {% extends "students/base.html" %}
 {% block content %}
+{% load student_extras %}
     <a href="{% url 'group_delete' pk=group.pk %}">delete group</a>
     {% for st in group.student_set.all %}
         <p>
@@ -10,5 +11,6 @@
     {% empty %}
         <p>No any students in this group</p>
     {% endfor %}
-    <a href="{% url 'student_create' %}">add student</a>   
+    <a href="{% url 'student_create' %}">add student</a> | 
+    <a href="{{ group|admin_url }}">group in admin</a>
 {% endblock content %}
