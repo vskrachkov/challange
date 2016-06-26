@@ -147,7 +147,6 @@ MESSAGE_TAGS = {
 
 try:
     from .local_settings import *
-    print('"local_settings.py" is included')
 
 except ImportError:
     print('"local_settings.py" is not included')
