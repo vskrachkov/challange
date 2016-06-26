@@ -6,7 +6,7 @@ test task for django junior
 
 #### Let's start with virtual environment
   ```
-  python -m venv env3
+  python3 -m venv env3
   source env3/bin/activate
   ```
 
