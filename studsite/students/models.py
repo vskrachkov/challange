@@ -15,7 +15,7 @@ class Group(models.Model):
     @property
     def starosta_list(self):
         return [
-            st for st in self.student_set.all() if st.starosta
+            st for st in self.students.all() if st.starosta
         ]
 
     def get_starosta(self):
@@ -23,7 +23,7 @@ class Group(models.Model):
             return self.starosta_list[0]
 
     def save(self):
-        if self.student_set and self.starosta_list:
+        if self.students and self.starosta_list:
             self.starosta = self.get_starosta()
         super().save()
 
@@ -33,14 +33,15 @@ class Student(models.Model):
     second_name = models.CharField(verbose_name=u'Отчество', max_length=50)
     last_name = models.CharField(verbose_name=u'Фамилия', max_length=50)
     student_ID = models.IntegerField(verbose_name=u'Номер студенческого')
-    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    group = models.ForeignKey(
+        Group, on_delete=models.CASCADE, related_name='students')
     starosta = models.BooleanField(
         verbose_name=u'Назначить старостой', blank=True, default=False)
 
     @property
     def starosta_list(self):
         return [
-            st for st in self.group.student_set.all() if st.starosta
+            st for st in self.group.students.all() if st.starosta
         ]
 
     class Meta:
