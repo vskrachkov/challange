@@ -19,6 +19,17 @@
     <a href="{% url 'logout' %}">logout</a> |
 </div>
     <hr>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No messages</p>
+    {% endif %}
+
     <h2>{{ title }}</h2> 
 
     {% block content %}
