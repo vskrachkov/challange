@@ -46,6 +46,12 @@ test task for django junior
   ./manage.py createsuperuser
   ```
   Then you will must answer on some questions.
+  
+#### Load initial data into your db
+  Execute following command:
+  ```
+  ./manage.py loaddata students/fixtures/initia_data.json
+  ```
 
 #### Run server
   Afrter user have been created you can run the server and go to the admin page `localhost:8000/admin`.
