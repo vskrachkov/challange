@@ -22,7 +22,7 @@ class Group(models.Model):
         if self.starosta_list:
             return self.starosta_list[0]
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if self.students and self.starosta_list:
             self.starosta = self.get_starosta()
         super().save()

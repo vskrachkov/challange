@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.db.models.signals import post_delete, post_save, pre_save
+from django.utils import timezone
 
 from students.models import Student, Group
 from .models import ModelInstancesChange
@@ -35,7 +36,7 @@ class StudentAppModelsSignals:
         app_label = instance._meta.app_label
         model_name = instance._meta.model.__name__
         change_type = cls.change(created)
-        change_time = datetime.now()
+        change_time = timezone.now()
         ModelInstancesChange(app_label=app_label,
                              model_name=model_name,
                              change_type=change_type,
@@ -48,7 +49,7 @@ class StudentAppModelsSignals:
         app_label = instance._meta.app_label
         model_name = instance._meta.model.__name__
         change_type = 'delete'
-        change_time = datetime.now()
+        change_time = timezone.now()
         ModelInstancesChange(app_label=app_label,
                              model_name=model_name,
                              change_type=change_type,
