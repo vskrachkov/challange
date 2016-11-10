@@ -45,7 +45,7 @@ test task for django junior
   ```
   ./manage.py createsuperuser
   ```
-  Then you will must answer on some questions.
+  After that answer some questions.
   
 #### Load initial data into your db
   Execute following command:
